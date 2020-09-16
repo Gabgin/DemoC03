@@ -33,7 +33,8 @@ namespace DemoC03
                 "Gilles Portelance",
                 "Xavier Samuel Huppé"
                 };
-            panneau.DataContext = this;
+            //panneau.DataContext = this;
+            listeProfs.ItemsSource = Profs;
 
         }
 
