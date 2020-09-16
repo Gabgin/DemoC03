@@ -21,18 +21,19 @@ namespace DemoC03
     /// </summary>
     public partial class MainWindow : Window
     {
-        public ObservableCollection<string> Profs { get; set; }
+        public ObservableCollection<Prof> Profs { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
-            Profs = new ObservableCollection<string>() {
-                "Luc Forcier",
-                "Marco Guay",
-                "Noémie Rochette",
-                "Ridha Louati",
-                "Gilles Portelance",
-                "Xavier Samuel Huppé"
-                };
+            Profs = new ObservableCollection<Prof>() {
+        new Prof("Luc Forcier"),
+        new Prof("Marco Guay"),
+        new Prof("Noémie Rochette"),
+        new Prof("Ridha Louati"),
+        new Prof("Gilles Portelance")
+    };
+
             //panneau.DataContext = this;
             listeProfs.ItemsSource = Profs;
 
@@ -40,14 +41,21 @@ namespace DemoC03
 
         private void BtnSupprimerProf_Click(object sender, RoutedEventArgs e)
         {
-            string nomProf = listeProfs.SelectedItem as string;
-            if (nomProf != null) // non-requis
-                Profs.Remove(nomProf);
+            Prof unProf = listeProfs.SelectedItem as Prof;
+            Profs.Remove(unProf);
         }
 
         private void BtnAjouterNouveauProf_Click(object sender, RoutedEventArgs e)
         {
-            Profs.Add(tbNom.Text);
+            Profs.Add(new Prof(tbNom.Text));
+        }
+
+
+        private void BtnMajProfSelectionne_Click(object sender, RoutedEventArgs e)
+        {
+            Prof unProf = listeProfs.SelectedItem as Prof;
+            if (unProf != null)
+                unProf.NomProf = tbNom.Text;
         }
 
     }

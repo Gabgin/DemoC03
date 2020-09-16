@@ -14,9 +14,12 @@ Title="Démo binding collections" SizeToContent="Height" Width="400">
         <DockPanel Margin="0,15">
             <TextBlock Text="Nouveau prof => " DockPanel.Dock="Left"/>
             <Button Name="btnAjouterNouveauProf" Click="BtnAjouterNouveauProf_Click" 
-                DockPanel.Dock="Right" Margin="5,0,0,0">Ajouter</Button>
+            DockPanel.Dock="Right" Margin="5,0,0,0">Ajouter</Button>
+            <Button Name="btnMajProfSelectionne" Click="BtnMajProfSelectionne_Click" 
+            DockPanel.Dock="Right" Margin="5,0,0,0">Maj (sel)</Button>
             <TextBox Name="tbNom"/>
         </DockPanel>
+
     </StackPanel>
 
 </Window>
