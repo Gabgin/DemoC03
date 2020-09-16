@@ -8,7 +8,15 @@
 Title="Démo binding collections" SizeToContent="Height" Width="400">
     <StackPanel Name="panneau">
         <TextBlock Text="Profs d'informatique:" FontSize="18"/>
-        <ListBox Name="listeProfs" ItemsSource="{Binding Path=Profs}" Height="140" Margin="20,0,20,0"/>
+        <ListBox Name="listeProfs" ItemsSource="{Binding Path=Profs}" 
+            Height="140" Margin="20,0,20,0">
+            <ListBox.Resources>
+                <DataTemplate DataType="{x:Type local:Prof}">
+                    <TextBlock Text="{Binding Path=NomProf}"/>
+                </DataTemplate>
+            </ListBox.Resources>
+        </ListBox>
+
         <Button Name="btnSupprimerProf" Content="Supprimer le prof sélectionné" 
             Click="BtnSupprimerProf_Click"/>
         <DockPanel Margin="0,15">
