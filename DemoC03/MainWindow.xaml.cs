@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,11 +21,11 @@ namespace DemoC03
     /// </summary>
     public partial class MainWindow : Window
     {
-        public List<string> Profs { get; set; }
+        public ObservableCollection<string> Profs { get; set; }
         public MainWindow()
         {
             InitializeComponent();
-            Profs = new List<string>() {
+            Profs = new ObservableCollection<string>() {
                 "Luc Forcier",
                 "Marco Guay",
                 "Noémie Rochette",
